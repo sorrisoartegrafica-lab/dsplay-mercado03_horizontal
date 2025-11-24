@@ -1,0 +1,114 @@
+/* style.css - Versão Final */
+
+:root {
+    /* Cores Padrão (Substituídas pela API) */
+    --cor-bg-start: #2a69d2;      
+    --cor-destaque: #afff00;      
+    --cor-texto-nome: #ffffff;    
+    --cor-texto-preco: #1f2937;   
+}
+
+body, html {
+    margin: 0; padding: 0; width: 100vw; height: 100vh;
+    overflow: hidden; font-family: 'Roboto', sans-serif;
+    background-color: #000;
+}
+
+#main-container {
+    width: 100%; height: 100%;
+    /* Gradiente Radial Fundo */
+    background: radial-gradient(circle at center, var(--cor-bg-start) 10%, #000000 120%);
+    display: flex; align-items: center; justify-content: center;
+}
+
+.line-clamp-2 {
+    display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
+    overflow: hidden; text-overflow: ellipsis;
+}
+
+/* --- KEYFRAMES DE ENTRADA --- */
+
+@keyframes slideInLeft { 
+    from { opacity: 0; transform: translateX(-100px); } 
+    to { opacity: 1; transform: translateX(0); } 
+}
+
+@keyframes slideInRight { 
+    from { opacity: 0; transform: translateX(50px); } 
+    to { opacity: 1; transform: translateX(0); } 
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Entrada do Preço (Pop) */
+@keyframes popIn {
+    0% { opacity: 0; transform: scale(0.5); }
+    80% { opacity: 1; transform: scale(1.1); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+/* PULSE (Apenas Escala - Opacidade Fixa para não sumir) */
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* --- KEYFRAMES DE SAÍDA (Transição de Movimento) --- */
+
+/* Produto sai deslizando para a esquerda */
+@keyframes exitToLeft { 
+    from { opacity: 1; transform: translateX(0); }
+    to { opacity: 0; transform: translateX(-100px); } 
+}
+
+/* Texto sai deslizando para a direita */
+@keyframes exitToRight { 
+    from { opacity: 1; transform: translateX(0); }
+    to { opacity: 0; transform: translateX(100px); } 
+}
+
+/* Preço diminui */
+@keyframes zoomOut { 
+    from { opacity: 1; transform: scale(1); }
+    to { opacity: 0; transform: scale(0.5); } 
+}
+
+
+/* --- CLASSES DE ESTADO --- */
+
+/* 1. PRODUTO */
+.anim-entrada-prod {
+    animation: slideInLeft 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+.anim-saida-prod {
+    animation: exitToLeft 0.5s ease-in forwards;
+}
+
+/* 2. TEXTO */
+.anim-entrada-txt {
+    animation: slideInRight 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards 0.1s; 
+    opacity: 0; 
+}
+.anim-saida-txt {
+    animation: exitToRight 0.5s ease-in forwards;
+}
+
+/* 3. PREÇO */
+.anim-entrada-preco {
+    animation: popIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards 0.2s;
+    opacity: 0;
+}
+
+/* Loop do Pulse (Adicionado via JS) */
+.anim-loop-preco {
+    opacity: 1 !important; 
+    animation: heartbeat 1.5s infinite ease-in-out;
+}
+
+.anim-saida-preco {
+    animation: zoomOut 0.4s ease-in forwards;
+}

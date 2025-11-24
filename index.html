@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Player Desktop - Versão Final</title>
+    
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main id="main-container">
+        
+        <div class="w-[45%] h-full flex items-center justify-end pr-[4vw]">
+            
+            <div id="card-produto" class="relative w-[65vh] h-[75vh] bg-white rounded-[3vh] shadow-[0_2vh_5vh_rgba(0,0,0,0.5)] flex flex-col overflow-hidden opacity-0">
+                
+                <div class="bg-gray-900 h-[15%] flex justify-center items-center">
+                    <span class="text-[var(--cor-destaque)] font-black text-[5vh] uppercase tracking-wider">OFERTA</span>
+                </div>
+                
+                <div class="flex-1 w-full h-full p-[8vh] bg-white relative">
+                    
+                    <div id="produto-container" class="w-full h-full flex items-center justify-center relative overflow-hidden">
+                        <img id="produto-img" src="" class="w-full h-full object-contain drop-shadow-xl"> 
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="w-[55%] h-full flex flex-col justify-center items-start pl-[3vw] pr-[5vw] relative">
+
+            <div id="logo-container" class="absolute top-[6vh] right-[5vw] bg-white py-[1.5vh] px-[2.5vw] rounded-[1vh] shadow-lg opacity-0">
+                <img id="logo-img" src="" class="h-[14vh] w-auto object-contain">
+            </div>
+
+            <div class="w-full mb-[4vh] mt-[12vh]">
+                <h1 id="nome-produto" class="text-white font-black text-[3vw] leading-[1.2] uppercase line-clamp-2 drop-shadow-xl max-w-[90%] opacity-0">
+                    </h1>
+            </div>
+
+            <div id="card-preco" class="relative bg-white rounded-[4vh] shadow-2xl px-[5vh] py-[3vh] transform origin-left w-auto min-w-[30vw] opacity-0">
+                
+                <div class="absolute -top-[2vh] left-[3vw] bg-[var(--cor-destaque)] text-gray-900 text-[1.5vh] font-black py-[0.8vh] px-[2vw] rounded-full shadow-md uppercase tracking-wide">
+                    Preço Exclusivo
+                </div>
+
+                <div class="flex items-end justify-center">
+                    <div class="flex flex-col justify-end pb-[1.5vh] mr-[1.5vw] text-right">
+                        <span class="block text-black text-[2.2vh] font-black leading-none mb-[0.5vh] uppercase tracking-wide">APENAS</span>
+                        <span class="text-neutral-800 font-black text-[4vh] leading-none">R$</span>
+                    </div>
+                    
+                    <span id="preco-texto" class="text-[var(--cor-texto-preco)] font-black text-[10vw] leading-[0.9] tracking-tighter">
+                        </span>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
