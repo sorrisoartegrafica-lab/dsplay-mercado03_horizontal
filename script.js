@@ -1,6 +1,6 @@
 // script.js - Versão Final (Logo Fixo + Saídas Fluidas + Pulse Seguro)
 
-const DEFAULT_VIDEO_ID = "1763501352257x910439018930896900"; 
+const DEFAULT_VIDEO_ID = "1764628151406x909721458907021300"; 
 const API_URL_BASE = "https://bluemidia.digital/version-test/api/1.1/wf/get_video_data";
 
 // Elementos DOM
@@ -130,3 +130,4 @@ async function init() {
 
 
 document.addEventListener('DOMContentLoaded', init);
+
