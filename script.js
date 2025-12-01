@@ -1,7 +1,7 @@
 // script.js - Versão Final (Logo Fixo + Saídas Fluidas + Pulse Seguro)
 
 const DEFAULT_VIDEO_ID = "1763501352257x910439018930896900"; 
-const API_URL_BASE = "https://bluemdia.bubbleapps.io/version-test/api/1.1/wf/get_video_data";
+const API_URL_BASE = "https://bluemidia.digital/version-test/api/1.1/wf/get_video_data";
 
 // Elementos DOM
 const cardProduto = document.getElementById('card-produto');
@@ -127,5 +127,6 @@ async function init() {
         }
     } catch (e) { console.error(e); }
 }
+
 
 document.addEventListener('DOMContentLoaded', init);
